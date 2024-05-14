@@ -1,0 +1,18 @@
+services:
+  jupyter:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8888:8888"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - JUPYTER_TOKEN=docker
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
