@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Generator</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js';
+
+const mazeWidth = 30;
+const mazeHeight = 30;
+const cellSize = 10;
+
+let scene, camera, renderer, controls;
+const maze = [];
+
+function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableRotate = true;
+    controls.enableZoom = true;
+    controls.enablePan = true; // Allow translation with right click
+
+    generateMaze();
+    drawMaze();
+    addFloor(); // Add the floor
+    
+    camera.position.set(mazeWidth * cellSize / 2, mazeHeight * cellSize * 1.5, mazeHeight * cellSize / 2);
+    camera.lookAt(mazeWidth * cellSize / 2, 0, mazeHeight * cellSize / 2);
+
+    animate();
+}
+
+function generateMaze() {
+    for (let x = 0; x < mazeWidth; x++) {
+        maze[x] = [];
+        for (let y = 0; y < mazeHeight; y++) {
+            maze[x][y] = { visited: false, walls: [true, true, true, true] };
+        }
+    }
+    carvePassagesFrom(0, 0);
+}
+
+function carvePassagesFrom(cx, cy) {
+    const directions = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+    shuffle(directions);
+
+    maze[cx][cy].visited = true;
+    
+    for (let i = 0; i < directions.length; i++) {
+        const nx = cx + directions[i][0];
+        const ny = cy + directions[i][1];
+
+        if (nx >= 0 && ny >= 0 && nx < mazeWidth && ny < mazeHeight && !maze[nx][ny].visited) {
+            maze[cx][cy].walls[i] = false;
+            maze[nx][ny].walls[(i + 2) % 4] = false;
+            carvePassagesFrom(nx, ny);
+        }
+    }
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function drawMaze() {
+    for (let x = 0; x < mazeWidth; x++) {
+        for (let y = 0; y < mazeHeight; y++) {
+            const cell = maze[x][y];
+            const posX = x * cellSize;
+            const posZ = y * cellSize;
+            if (cell.walls[0]) addWall(posX, posZ, cellSize, 0);
+            if (cell.walls[1]) addWall(posX + cellSize, posZ, cellSize, Math.PI / 2);
+            if (cell.walls[2]) addWall(posX, posZ + cellSize, cellSize, Math.PI);
+            if (cell.walls[3]) addWall(posX, posZ, cellSize, -Math.PI / 2);
+        }
+    }
+}
+
+function addWall(x, z, length, rotation) {
+    const wallGeometry = new THREE.BoxGeometry(length, cellSize / 2, 1);
+    const wallMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const wall = new THREE.Mesh(wallGeometry, wallMaterial);
+    wall.rotation.y = rotation;
+    wall.position.set(x + length / 2, cellSize / 4, z + 0.5);
+    scene.add(wall);
+}
+
+function addFloor() {
+    const floorGeometry = new THREE.PlaneGeometry(mazeWidth * cellSize, mazeHeight * cellSize);
+    const floorMaterial = new THREE.MeshBasicMaterial({ color: 0x444444, side: THREE.DoubleSide });
+    const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+    floor.rotation.x = Math.PI / 2;
+    floor.position.set(mazeWidth * cellSize / 2, 0, mazeHeight * cellSize / 2);
+    scene.add(floor);
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+
+window.addEventListener("resize", () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+init();
+</script>
+
+</body>
+</html>
