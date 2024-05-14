@@ -1,0 +1,34 @@
+{
+    "name": "Jessica Moore",
+    "age": 29,
+    "gender": "Female",
+    "occupation": "Detective",
+    "traits": {
+        "personality": [
+            "brave",
+            "intelligent",
+            "resourceful"
+        ],
+        "physical": {
+            "height": "5'7\"",
+            "hairColor": "Brown",
+            "eyeColor": "Green"
+        }
+    },
+    "background": {
+        "origin": "New York City",
+        "family": {
+            "father": "John Stone",
+            "mother": "Emma Stone",
+            "siblings": [
+                "Mike Stone"
+            ]
+        },
+        "education": "Criminal Justice Degree from NYU"
+    },
+    "skills": [
+        "investigation",
+        "hand-to-hand combat",
+        "negotiation"
+    ]
+}

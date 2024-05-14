@@ -1,0 +1,34 @@
+{
+    "name": "Emily Davis",
+    "age": 30,
+    "gender": "Female",
+    "occupation": "Journalist",
+    "traits": {
+        "personality": [
+            "inquisitive",
+            "articulate",
+            "determined"
+        ],
+        "physical": {
+            "height": "5'8\"",
+            "hairColor": "Brown",
+            "eyeColor": "Blue"
+        }
+    },
+    "background": {
+        "origin": "London",
+        "family": {
+            "father": "Michael Davis",
+            "mother": "Susan Davis",
+            "siblings": [
+                "Kevin Davis"
+            ]
+        },
+        "education": "Journalism Degree from University of London"
+    },
+    "skills": [
+        "writing",
+        "research",
+        "interviewing"
+    ]
+}

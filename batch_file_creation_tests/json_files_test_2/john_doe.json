@@ -1,0 +1,32 @@
+{
+    "name": "John Doe",
+    "age": 35,
+    "gender": "Male",
+    "occupation": "Firefighter",
+    "traits": {
+        "personality": [
+            "brave",
+            "selfless",
+            "strong"
+        ],
+        "physical": {
+            "height": "6'2\"",
+            "hairColor": "Black",
+            "eyeColor": "Blue"
+        }
+    },
+    "background": {
+        "origin": "Chicago",
+        "family": {
+            "father": "James Doe",
+            "mother": "Sarah Doe",
+            "siblings": []
+        },
+        "education": "Fire Science Degree from University of Illinois"
+    },
+    "skills": [
+        "firefighting",
+        "first aid",
+        "rescue operations"
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Jessica Moore",
+    "age": 27,
+    "gender": "Female",
+    "occupation": "Chemist",
+    "traits": {
+        "personality": [
+            "precise",
+            "patient",
+            "curious"
+        ],
+        "physical": {
+            "height": "5'4\"",
+            "hairColor": "Brown",
+            "eyeColor": "Hazel"
+        }
+    },
+    "background": {
+        "origin": "Berlin",
+        "family": {
+            "father": "Henry Moore",
+            "mother": "Anna Moore",
+            "siblings": []
+        },
+        "education": "Chemistry Degree from Humboldt University"
+    },
+    "skills": [
+        "analytical chemistry",
+        "laboratory techniques",
+        "synthesis"
+    ]
+}

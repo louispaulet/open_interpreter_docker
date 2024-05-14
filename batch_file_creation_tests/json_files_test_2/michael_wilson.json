@@ -1,0 +1,32 @@
+{
+    "name": "Michael Wilson",
+    "age": 34,
+    "gender": "Male",
+    "occupation": "Pilot",
+    "traits": {
+        "personality": [
+            "calm",
+            "decisive",
+            "trustworthy"
+        ],
+        "physical": {
+            "height": "6'0\"",
+            "hairColor": "Brown",
+            "eyeColor": "Green"
+        }
+    },
+    "background": {
+        "origin": "Sydney",
+        "family": {
+            "father": "Steven Wilson",
+            "mother": "Diana Wilson",
+            "siblings": []
+        },
+        "education": "Aviation Degree from UNSW"
+    },
+    "skills": [
+        "flying",
+        "navigation",
+        "communication"
+    ]
+}

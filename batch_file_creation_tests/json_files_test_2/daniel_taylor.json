@@ -1,0 +1,32 @@
+{
+    "name": "Daniel Taylor",
+    "age": 31,
+    "gender": "Male",
+    "occupation": "Photographer",
+    "traits": {
+        "personality": [
+            "creative",
+            "observant",
+            "detail-oriented"
+        ],
+        "physical": {
+            "height": "5'10\"",
+            "hairColor": "Black",
+            "eyeColor": "Blue"
+        }
+    },
+    "background": {
+        "origin": "Toronto",
+        "family": {
+            "father": "George Taylor",
+            "mother": "Barbara Taylor",
+            "siblings": []
+        },
+        "education": "Photography Degree from Ryerson University"
+    },
+    "skills": [
+        "photography",
+        "editing",
+        "lighting"
+    ]
+}
