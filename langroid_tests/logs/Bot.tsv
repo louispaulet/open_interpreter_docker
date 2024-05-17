@@ -1,0 +1,106 @@
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	Bot	Entity.USER	Entity.USER			None			Hello
+ 	Bot	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Bot	Entity.AGENT	Entity.USER			None			
+*	Bot	Entity.LLM	Entity.LLM			None			Hi there! How can I assist you today?
+*	Bot	Entity.USER	Entity.USER			None			q
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	Teacher	Entity.USER	Entity.USER			None			
+ 	Teacher	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Teacher	Entity.AGENT	Entity.USER			None			
+*	Teacher	Entity.LLM	Entity.LLM			None			What is 5 + 3?
+*	Teacher	Entity.USER	Entity.USER			None			q
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	Teacher	Entity.USER	Entity.USER			None			
+ 	Teacher	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Teacher	Entity.AGENT	Entity.USER			None			
+*	Teacher	Entity.LLM	Entity.LLM			None			What is 15% of 200?
+*	Teacher	Entity.USER	Entity.USER			None			7 ?
+ 	Teacher	Entity.AGENT	Entity.USER			None			
+*	Teacher	Entity.LLM	Entity.LLM			None			That's not quite right. Let's try again. What is 15% of 200?
+*	Teacher	Entity.USER	Entity.USER			None			q
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	Student	Entity.USER	Entity.USER			None			
+ 	Student	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None	FUNC	recipient_message	FUNC: { "name": "recipient_message", "arguments": { "intended_recipient": "Train..., "content": "What are the key steps involved in training a language model?" } }
+*	Student	Entity.AGENT	Entity.LLM		TrainingExpert	None			What are the key steps involved in training a language model?
+ 	Student	Entity.USER	Entity.USER	Entity.USER	TrainingExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.AGENT	Entity.AGENT	TrainingExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.LLM	Entity.LLM	Entity.LLM	TrainingExpert	None			[CANNOT RESPOND]
+ 	TrainingExpert	Entity.USER	Entity.USER		TrainingExpert	None			What are the key steps involved in training a language model?
+ 	TrainingExpert	Entity.USER	Entity.USER	Entity.USER	TrainingExpert	None			[CANNOT RESPOND]
+ 	TrainingExpert	Entity.AGENT	Entity.USER			None			
+*	TrainingExpert	Entity.LLM	Entity.LLM			None			The key steps are: collecting and preprocessing text data, choosing a model arch...ning the model on the data, and then fine-tuning and evaluating its performance.
+*	Student	TrainingExpert	Entity.USER	TrainingExpert		None			The key steps are: collecting and preprocessing text data, choosing a model arch...ning the model on the data, and then fine-tuning and evaluating its performance.
+*	Student	Entity.USER	Entity.USER			None			q
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	Teacher	Entity.USER	Entity.USER			None			
+ 	Teacher	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Teacher	Entity.AGENT	Entity.USER			None			
+*	Teacher	Entity.LLM	Entity.LLM			None			What is 7 multiplied by 8?
+ 	Teacher	Entity.USER	Entity.USER			None			
+ 	Teacher	Entity.AGENT	Entity.USER			None			
+ 	Teacher	Entity.LLM	Entity.LLM	Entity.LLM		None			[CANNOT RESPOND]
+ 	Student	Entity.USER	Entity.USER			None			What is 7 multiplied by 8?
+ 	Student	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None			56
+*	Teacher	Student	Entity.USER	Student		None			56
+*	Teacher	Entity.USER	Entity.USER			None			q
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	Student	Entity.USER	Entity.USER			None			
+ 	Student	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None	FUNC	recipient_message	FUNC: { "name": "recipient_message", "arguments": { "intended_recipient": "Train..., "content": "What are the key steps involved in training a language model?" } }
+*	Student	Entity.AGENT	Entity.LLM		TrainingExpert	None			What are the key steps involved in training a language model?
+ 	Student	Entity.USER	Entity.USER	Entity.USER	TrainingExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.AGENT	Entity.AGENT	TrainingExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.LLM	Entity.LLM	Entity.LLM	TrainingExpert	None			[CANNOT RESPOND]
+ 	TrainingExpert	Entity.USER	Entity.USER		TrainingExpert	None			What are the key steps involved in training a language model?
+ 	TrainingExpert	Entity.USER	Entity.USER	Entity.USER	TrainingExpert	None			[CANNOT RESPOND]
+ 	TrainingExpert	Entity.AGENT	Entity.USER			None			
+*	TrainingExpert	Entity.LLM	Entity.LLM			None			The key steps are data collection and preprocessing, model selection, training t...ta, evaluating its performance, and fine-tuning based on the evaluation results.
+*	Student	TrainingExpert	Entity.USER	TrainingExpert		None			The key steps are data collection and preprocessing, model selection, training t...ta, evaluating its performance, and fine-tuning based on the evaluation results.
+ 	Student	Entity.USER	Entity.USER			None			
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None	FUNC	recipient_message	FUNC: { "name": "recipient_message", "arguments": { "intended_recipient": "Train...u explain the importance of data preprocessing in training language models?" } }
+*	Student	Entity.AGENT	Entity.LLM		TrainingExpert	None			Can you explain the importance of data preprocessing in training language models?
+ 	Student	Entity.USER	Entity.USER	Entity.USER	TrainingExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.AGENT	Entity.AGENT	TrainingExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.LLM	Entity.LLM	Entity.LLM	TrainingExpert	None			[CANNOT RESPOND]
+ 	TrainingExpert	Entity.USER	Entity.USER		TrainingExpert	None			Can you explain the importance of data preprocessing in training language models?
+ 	TrainingExpert	Entity.USER	Entity.USER	Entity.USER	TrainingExpert	None			[CANNOT RESPOND]
+ 	TrainingExpert	Entity.AGENT	Entity.USER			None			
+*	TrainingExpert	Entity.LLM	Entity.LLM			None			Data preprocessing is crucial because it cleans and formats the raw text data, r...ich helps the model learn more effectively and improves its overall performance.
+*	Student	TrainingExpert	Entity.USER	TrainingExpert		None			Data preprocessing is crucial because it cleans and formats the raw text data, r...ich helps the model learn more effectively and improves its overall performance.
+ 	Student	Entity.USER	Entity.USER			None			
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None	FUNC	recipient_message	FUNC: { "name": "recipient_message", "arguments": { "intended_recipient": "Evalu...are the common metrics used to evaluate the performance of language models?" } }
+*	Student	Entity.AGENT	Entity.LLM		EvaluationExpert	None			What are the common metrics used to evaluate the performance of language models?
+ 	Student	Entity.USER	Entity.USER	Entity.USER	EvaluationExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.AGENT	Entity.AGENT	EvaluationExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.LLM	Entity.LLM	Entity.LLM	EvaluationExpert	None			[CANNOT RESPOND]
+ 	Student	TrainingExpert	Entity.USER	TrainingExpert	EvaluationExpert	None			[CANNOT RESPOND]
+ 	EvaluationExpert	Entity.USER	Entity.USER		EvaluationExpert	None			What are the common metrics used to evaluate the performance of language models?
+ 	EvaluationExpert	Entity.USER	Entity.USER	Entity.USER	EvaluationExpert	None			[CANNOT RESPOND]
+ 	EvaluationExpert	Entity.AGENT	Entity.USER			None			
+*	EvaluationExpert	Entity.LLM	Entity.LLM			None			Common metrics include perplexity, BLEU (Bilingual Evaluation Understudy), ROUGE...pending on the specific task like translation, summarization, or classification.
+*	Student	EvaluationExpert	Entity.USER	EvaluationExpert		None			Common metrics include perplexity, BLEU (Bilingual Evaluation Understudy), ROUGE...pending on the specific task like translation, summarization, or classification.
+ 	Student	Entity.USER	Entity.USER			None			
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None	FUNC	recipient_message	FUNC: { "name": "recipient_message", "arguments": { "intended_recipient": "Evalu...", "content": "How do you determine if a language model is performing well?" } }
+*	Student	Entity.AGENT	Entity.LLM		EvaluationExpert	None			How do you determine if a language model is performing well?
+ 	Student	Entity.USER	Entity.USER	Entity.USER	EvaluationExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.AGENT	Entity.AGENT	Entity.AGENT	EvaluationExpert	None			[CANNOT RESPOND]
+ 	Student	Entity.LLM	Entity.LLM	Entity.LLM	EvaluationExpert	None			[CANNOT RESPOND]
+ 	Student	TrainingExpert	Entity.USER	TrainingExpert	EvaluationExpert	None			[CANNOT RESPOND]
+ 	EvaluationExpert	Entity.USER	Entity.USER		EvaluationExpert	None			How do you determine if a language model is performing well?
+ 	EvaluationExpert	Entity.USER	Entity.USER	Entity.USER	EvaluationExpert	None			[CANNOT RESPOND]
+ 	EvaluationExpert	Entity.AGENT	Entity.USER			None			
+*	EvaluationExpert	Entity.LLM	Entity.LLM			None			You determine if a language model is performing well by comparing its evaluation...) against baseline models or human performance benchmarks for the specific task.
+*	Student	EvaluationExpert	Entity.USER	EvaluationExpert		None			You determine if a language model is performing well by comparing its evaluation...) against baseline models or human performance benchmarks for the specific task.
+ 	Student	Entity.USER	Entity.USER			None			
+ 	Student	Entity.AGENT	Entity.USER			None			
+*	Student	Entity.LLM	Entity.LLM			None			DONE Here are the 4 bullet points about Language Models in the context of Machin...s against baseline models or human performance benchmarks for the specific task.
+*	Student	Entity.USER	Entity.USER			None			q
